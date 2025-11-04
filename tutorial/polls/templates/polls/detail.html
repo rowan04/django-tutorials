@@ -6,7 +6,13 @@
         <title>Polls Detail</title>
     </head>
     <body>
-        <p>You're looking at results for {{ question }}</p>
+        <p>You're looking at {{ question }}</p>
         <br/>
+        <h1>{{ question.question_text }}</h1>
+        <ul>
+            {% for choice in question.choice.set.all %}
+              <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
